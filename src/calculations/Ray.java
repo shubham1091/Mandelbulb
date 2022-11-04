@@ -4,7 +4,7 @@ import graphics.Main;
 
 import java.awt.*;
 
-public class RayMarcher {
+public class Ray {
 
     public static CosSineTable table = new CosSineTable();
 
@@ -57,7 +57,7 @@ public class RayMarcher {
             noData.setCollisionPoint(currentRayPos);
 
             //Get sceneSDF from current ray position for next march amount
-            double marchDistance = MandelBulb.getSDF(currentRayPos);
+            double marchDistance = Bulb.getSDF(currentRayPos);
 
             //If SDF is small enough, count it as a ray collision!
             if (marchDistance < EPSILON) {

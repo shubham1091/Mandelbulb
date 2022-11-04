@@ -1,7 +1,7 @@
 package graphics;
 
 import calculations.Vec2;
-import calculations.MandelBulb;
+import calculations.Bulb;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
@@ -43,7 +43,7 @@ public class View extends JPanel {
             int startRender = t * (Main.renderWidth / threadCount);
             int endRender = (t + 1) * (Main.renderWidth / threadCount);
 
-            new Thread(new RenderTask(startRender, endRender, latch)).start();
+            new Thread(new Render(startRender, endRender, latch)).start();
         }
         //Wait for all render threads to finish
         try {
@@ -78,8 +78,8 @@ public class View extends JPanel {
 
         /*** Update values for next frame ***/
 
-        if(MandelBulb.power < 10.0*0.9) {
-            MandelBulb.power += 0.008;
+        if(Bulb.power < 10.0*0.9) {
+            Bulb.power += 0.008;
             frame++;
 
             repaint();

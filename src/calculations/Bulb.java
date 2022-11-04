@@ -1,14 +1,14 @@
 package calculations;
 
-public class MandelBulb {
+public class Bulb {
     public static double rot = 0;
     public static double power = 10.0*0.5;;
     private static final int MAX_ITER = 15;
 
     static Vec3 rotate_point_y(double cx,double cz,double angle,Vec3 p)
     {
-        double s = RayMarcher.table.getSine((int)angle);
-        double c = RayMarcher.table.getCos((int)angle);
+        double s = Ray.table.getSine((int)angle);
+        double c = Ray.table.getCos((int)angle);
 
         // translate point back to origin:
         p.x -= cx;
@@ -25,11 +25,11 @@ public class MandelBulb {
     }
 
     private static double sin(double rads) {
-        return RayMarcher.table.getSine((int)Math.toDegrees(rads));
+        return Ray.table.getSine((int)Math.toDegrees(rads));
     }
 
     private static double cos(double rads) {
-        return RayMarcher.table.getCos((int)Math.toDegrees(rads));
+        return Ray.table.getCos((int)Math.toDegrees(rads));
     }
 
     public static double getSDF(Vec3 cam) {

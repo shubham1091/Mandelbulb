@@ -1,6 +1,6 @@
 package graphics;
 
-import calculations.MandelBulb;
+import calculations.Bulb;
 
 import javax.swing.*;
 import java.awt.image.BufferedImage;
@@ -37,7 +37,7 @@ public class Main extends JFrame {
         new Main();
 
         // Initialize MandelBulb values
-        MandelBulb.rot = 40;
-        MandelBulb.power = 10.0 * 0.3;
+        Bulb.rot = 40;
+        Bulb.power = 10.0 * 0.3;
     }
 }
